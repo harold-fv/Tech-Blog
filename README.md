@@ -1,10 +1,8 @@
-# 14 Model-View-Controller (MVC): Tech Blog
+# Tech Blog
 
-## Your Task
+## Description
 
-Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!
-
-Your task this week is to build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. You’ll build this site completely from scratch and deploy it to Heroku. Your app will follow the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+This is a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. 
 
 ## User Story
 
@@ -52,81 +50,100 @@ WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
 
-## Mock-Up
+## Installation
 
-The following animation demonstrates the application functionality:
+To install and use the Tech Blog application, please follow these steps:
 
-![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./Assets/14-mvc-homework-demo-01.gif) 
+1.You can clone this repository to your local machine using Git:
 
-## Getting Started
+Git clone https://github.com/harold-fv/Tech-Blog.
 
-Your application’s folder structure must follow the Model-View-Controller paradigm. You’ll need to use the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views, use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect to a MySQL database for your Models, and create an Express.js API for your Controllers.
+Next, run the following on the command line, npm i express install sequelize mysql2 bcrypt dotenv express-handlebars --save express-session
 
-You’ll also need the [dotenv package](https://www.npmjs.com/package/dotenv) to use environment variables, the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, and the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
+After you install the package ,from the command line type, npm run seed. This is to load the data into the server. Then to load and run the program type, npm start.
 
-**Note**: The [express-session](https://www.npmjs.com/package/express-session) package stores the session data on the client in a cookie. When you are idle on the site for more than a set time, the cookie will expire and you will be required to log in again to start a new session. This is the default behavior and you do not have to do anything to your application other than implement the npm package.
+## Usage
 
-## Grading Requirements
+1. To demonstrate the acceptance criteria, after you run the package, below is the overview of the application. It shows the  existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in.
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+![image](https://user-images.githubusercontent.com/120603153/234785874-699d7615-7a79-46ff-8302-7cda13e18462.png)
 
-This Challenge is graded based on the following criteria:
+2. When a user clicks on any other links in the navigation
+then the system will prompt to either sign up or sign in.
 
-### Technical Acceptance Criteria: 40%
+![image](https://user-images.githubusercontent.com/120603153/234786398-59816355-9cbb-4619-8909-adc9bbbba3d6.png)
 
-* Satisfies all of the preceding acceptance criteria plus the following:
+3. When a user chooses to sign up,then the system will prompt to create a username and password.
 
-    * Application’s folder structure follows the Model-View-Controller paradigm.
+![image](https://user-images.githubusercontent.com/120603153/234786653-20b452f4-a05e-4301-8184-b6ee399e8cbe.png)
 
-    * Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
+4. When a user clicks on the sign-up button, then the user credentials are saved and logged into the site.
 
-    * Application must be deployed to Heroku.
+![image](https://user-images.githubusercontent.com/120603153/234787015-8c533268-0332-4630-b1e7-0586bcd6b840.png)
 
-### Deployment: 32%
+5. When a user revisits the site at a later time and choose to sign in,then the system will prompt to enter username and password.
 
-* Application deployed at live URL.
+![image](https://user-images.githubusercontent.com/120603153/234787354-91b3ae37-cc4e-4877-ba38-ec75900c1693.png)
 
-* Application loads with no errors.
+6. When a user signs in to the site, then the user can see navigation links for the homepage, the dashboard, and the option to log out.
 
-* Application GitHub URL submitted.
+![image](https://user-images.githubusercontent.com/120603153/234787755-d137419b-ab84-4a6e-8e9d-335e23416c6f.png)
 
-* GitHub repository contains application code.
+7. When a user clicks on the homepage option in the navigation
+then the system will show the homepage and presented with existing blog posts that include the post title and the date created.
 
-### Application Quality: 15%
+![image](https://user-images.githubusercontent.com/120603153/234788152-37e7d7b0-51c7-4c0e-9da9-3b8ee43e1acc.png)
 
-* User experience is intuitive and easy to navigate.
+8. When a user clicks on an existing blog post
+then the system will present with the post title, contents, post creator’s username, and date created for that post and have the option to leave a comment.
 
-* User interface style is clean and polished.
+![image](https://user-images.githubusercontent.com/120603153/234788429-d58202a7-b1e5-4b62-abcd-20a1d421e1a7.png)
 
-* Application resembles the mock-up functionality provided in the Challenge instructions.
+9. When a user enters a comment and click on the submit button while signed in,then the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created.
 
-### Repository Quality: 13%
+![image](https://user-images.githubusercontent.com/120603153/234788724-f25912a8-ab7f-478e-aa06-f6c697164468.png)
 
-* Repository has a unique name.
+10. When a user clicks on the dashboard option in the navigation
+then the system will take it to the dashboard and presented with any blog posts I have already created and the option to add a new blog post.
 
-* Repository follows best practices for file structure and naming conventions.
+![image](https://user-images.githubusercontent.com/120603153/234789205-7d256304-6f17-4f6f-80e6-c5d605475c41.png)
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+11. When a user clicks on the button to add a new blog post
+then the system will prompt to enter both a title and contents for my blog post.
 
-* Repository contains multiple descriptive commit messages.
+![image](https://user-images.githubusercontent.com/120603153/234789545-ff02f629-dd22-4b23-9bfa-cd592d50f3e8.png)
 
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
+12. When a user clicks on the button to create a new blog post
+Then the title and contents of the post are saved and the system will be taken back to an updated dashboard with the user's new blog post.
 
-## Review
+![image](https://user-images.githubusercontent.com/120603153/234790224-e9e6dda8-4a39-462b-86b1-c9e3b305bfaa.png)
 
-You are required to submit BOTH of the following for review:
+13. When a user clicks on one of my existing posts in the dashboard, then the user will beable to delete or update his/her post and taken back to an updated dashboard.
 
-* The URL of the functional, deployed application.
+![image](https://user-images.githubusercontent.com/120603153/234790630-db8a587b-5d17-48fd-9694-74712b5f01e0.png)
 
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
+14. When a user clicks on the logout option in the navigation
+then the user will be signed out of the site.
 
----
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+![image](https://user-images.githubusercontent.com/120603153/234790942-b0e151ae-c0ee-4cda-8843-6b8127bb9f22.png)
+
+15. When a user is on idle on the site for more than a set time
+then the user will be able to view comments but will be prompted to log in again before he/she can add, update, or delete comments.
+
+![image](https://user-images.githubusercontent.com/120603153/234791236-13222167-b7b4-491f-8ba3-0fe121f0d923.png)
+
+
+Overall, the Tech Blog  application is a useful tool to publish their blog posts and comment. 
+
+
+
+
+
+
+
+
+
+
+
+
+
