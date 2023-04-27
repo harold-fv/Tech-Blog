@@ -1,0 +1,10 @@
+<!-- views/homepage.handlebars -->
+<h1>HomePage</h1>
+<div class="blog-container">
+    {{#each blogs}}
+        <div class="blog">
+            <h2>{{title}}</h2>
+            <p>Created by {{author}} on {{date}}</p>
+        </div>
+    {{/each}}
+</div>
